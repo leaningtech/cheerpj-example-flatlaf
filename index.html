@@ -27,10 +27,11 @@ body
 	<script>
 		async function cj3init()
 		{
+			const jarPath = "/app"+window.location.pathname+"flatlaf-demo-3.6.jar";
 			try {
 				await cheerpjInit({version: 17, maximizeWindows: true});
 				cheerpjCreateDisplay(-1,-1, document.getElementById("containerDiv"));
-				await cheerpjRunJar("/app/flatlaf-demo-3.6.jar");
+				await cheerpjRunJar(jarPath);
 			} catch (e) {
 				console.log("Catch init error:");
 				console.log(e);
