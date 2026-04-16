@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CheerpJ FlatLaf Demo</title>
+	<script src="https://cjrtnc.leaningtech.com/20260415_3019/loader.js"></script>
+</head>
+<style>
+body
+{
+	margin: 0;
+	font-family: Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+.container {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+</style>
+<body>
+	<div id="containerDiv" class="container"></div>
+	<script>
+		async function cj3init()
+		{
+			try {
+				await cheerpjInit({version: 17, maximizeWindows: true});
+				cheerpjCreateDisplay(-1,-1, document.getElementById("containerDiv"));
+				await cheerpjRunJar("/app/flatlaf-demo-3.6.jar");
+			} catch (e) {
+				console.log("Catch init error:");
+				console.log(e);
+			}
+		}
+		cj3init();
+	</script>
+</body>
+</html>
